@@ -16,7 +16,8 @@ tareas = [
 
 function printTareas(){
     tareas.forEach(tarea => (
-        sectionTareas.innerHTML += `<article>${tarea.titulo}</article>`
+        sectionTareas.innerHTML += `<article>${tarea.titulo}</article>
+        <button id="btnDelet" onclick="deleteTarea(${tarea.idTarea})">ELIMINAR</button>`
     ))
 }
 
@@ -24,14 +25,26 @@ function createForm(){
     let inputForm = document.querySelector('#inputForm');
     let selectForm = document.querySelector('#selectForm');
 
-    let nuevaTarea = {idTarea: 3, titulo: inputForm.value, prioridad:selectForm.value}
+    let nuevaTarea = {idTarea: (tareas[tareas.length -1].idTarea + 1), titulo: inputForm.value, prioridad:selectForm.value}
     tareas.push(nuevaTarea)
     sectionTareas.innerHTML = ""
     tareas.forEach(tarea => (
-        sectionTareas.innerHTML += `<article>${tarea.titulo}</article>`
+        sectionTareas.innerHTML += `<article>${tarea.titulo}</article>
+        <button id="btnDelet" onclick="deleteTarea(${tarea.idTarea})">ELIMINAR</button>`
     ))
 }
 
+function deleteTarea(idTarea){
+    
+let tarea = tareas.find( tarea => tarea.idTarea === idTarea );
+positionTarea = tareas.indexOf(tarea)
+tareas.splice(positionTarea, 1)
+sectionTareas.innerHTML = ""
+tareas.forEach(tarea => (
+    sectionTareas.innerHTML += `<article>${tarea.titulo}</article>
+    <button id="btnDelet" onclick="deleteTarea(${tarea.idTarea})">ELIMINAR</button>`
+))
+}
 printTareas();
 
 
