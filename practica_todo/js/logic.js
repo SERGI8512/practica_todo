@@ -1,5 +1,6 @@
 let tareas = new Array()
 let sectionTareas = document.querySelector('#sectionTareas');
+let sectionForm = document.querySelector('#sectionForm');
 
 tareas = [
     {
@@ -14,10 +15,25 @@ tareas = [
 ]
 
 function printTareas(){
-    console.log(tareas);
     tareas.forEach(tarea => (
-sectionTareas.innerHTML += `<article>${tarea.titulo}</article>`
+        sectionTareas.innerHTML += `<article>${tarea.titulo}</article>`
+    ))
+}
+
+function createForm(){
+    let inputForm = document.querySelector('#inputForm');
+    let selectForm = document.querySelector('#selectForm');
+
+    let nuevaTarea = {idTarea: 3, titulo: inputForm.value, prioridad:selectForm.value}
+    tareas.push(nuevaTarea)
+    sectionTareas.innerHTML = ""
+    tareas.forEach(tarea => (
+        sectionTareas.innerHTML += `<article>${tarea.titulo}</article>`
     ))
 }
 
 printTareas();
+
+
+
+
