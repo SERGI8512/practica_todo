@@ -7,14 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practica - TODO</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
-
-
-    <div>
-        <div id="sectionForm">
+    <div class="container">
+        <div class="flex-container-form" id="sectionForm">
             <input id="inputForm" type="text">
             <select id="selectForm" name="select">
                 <option value="diaria" selected>DIARIA</option>
@@ -23,27 +20,18 @@
             </select>
             <button id="btn" onclick="createForm()">GUARDAR</button>
         </div>
-        <div>
-            <input type="text" id="inputFilter" placeholder="Introduce nombre tarea">
-            <select id="selectTarea" name="Seleccionar Prioridad">
+        <div class="flex-container-filter">
+            <input type="text" id="inputFilter" placeholder="Introduce nombre tarea" onchange="filtrarTareas()">
+            <select id="selectTarea" name="Seleccionar Prioridad" onchange="filtrarTareas()">
                 <option value="" selected>SELECCIONAR</option>
                 <option value="diaria" selected>DIARIA</option>
                 <option value="urgente">URGENTE</option>
                 <option value="mensual">MENSUAL</option>
             </select>
-            <button id="btnFiltrar" onclick="filtrarTareas()">FILTRAR</button>
         </div>
         <div id="sectionTareas">
-            <!-- <article>TAREA1
-        <button id="btnDelet" onclick="">ELIMINAR</button>
-    </article>
-    <article>TAREA2</article>
-    <article>TAREA3</article>
- -->
         </div>
     </div>
-
-
     <script src="js/logic.js"></script>
 </body>
 
