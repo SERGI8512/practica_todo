@@ -1,37 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practica - TODO</title>
     <link rel="stylesheet" href="css/style.css">
-    
-</head>
-<body>
-  
 
-<div>
-    <div id="sectionForm">
-        <input id="inputForm" type="text">
-        <select id="selectForm" name="select">
-            <option value="diaria" selected>DIARIA</option>
-            <option value="urgente" >URGENTE</option>
-            <option value="mensual">MENSUAL</option>
-        </select>
-        <button id="btn" onclick="createForm()">GUARDAR</button>
-    </div>
-<div id="sectionTareas">
-    <!-- <article>TAREA1
+</head>
+
+<body>
+
+
+    <div>
+        <div id="sectionForm">
+            <input id="inputForm" type="text">
+            <select id="selectForm" name="select">
+                <option value="diaria" selected>DIARIA</option>
+                <option value="urgente">URGENTE</option>
+                <option value="mensual">MENSUAL</option>
+            </select>
+            <button id="btn" onclick="createForm()">GUARDAR</button>
+        </div>
+        <div>
+            <input type="text" id="inputFilter" placeholder="Introduce nombre tarea">
+            <select id="selectTarea" name="Seleccionar Prioridad">
+                <option value="" selected>SELECCIONAR</option>
+                <option value="diaria" selected>DIARIA</option>
+                <option value="urgente">URGENTE</option>
+                <option value="mensual">MENSUAL</option>
+            </select>
+            <button id="btnFiltrar" onclick="filtrarTareas()">FILTRAR</button>
+        </div>
+        <div id="sectionTareas">
+            <!-- <article>TAREA1
         <button id="btnDelet" onclick="">ELIMINAR</button>
     </article>
     <article>TAREA2</article>
     <article>TAREA3</article>
  -->
-</div>
-</div>
+        </div>
+    </div>
 
 
     <script src="js/logic.js"></script>
 </body>
+
 </html>
